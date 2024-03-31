@@ -18,5 +18,13 @@ pipeline {
                 }
             }
         }
-    }
+    stage('Docker Build Images') {
+            steps {
+                script {
+                    sh 'docker build -t naresh2603/multi:v1 .'
+                    sh 'docker images'
+		    }
+		}
+	   }					
+
 }
